@@ -78,18 +78,18 @@ class Trie:
         if "_end" in current:
             return True
         return False
-    
+ 
 word_trie = Trie()
 for word in words:
     word_trie.insert(word)
+misspelled = Trie()
 
-misspelled = Trie() # part of tree
 
+# Step 6
 word_hash = {}
 for word in words:
-    word_hash[word] = True
-    
-misspelled = {} # part of hash
+    word_hash[word] = True   
+misspelled = {}
 
 for i in range(0, len(file_words)):
     file_words[i] = clean(file_words[i])
